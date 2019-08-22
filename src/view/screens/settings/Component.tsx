@@ -4,34 +4,25 @@ import { View } from 'react-native';
 import styles from './styles';
 import { CText } from '../../elements/custom';
 
-export interface Props {
-  name: string;
-}
+export interface Props {}
 
-interface State {
-  name: string;
-}
+interface State {}
 
-class Home extends React.PureComponent<Props, State> {
+class Settings extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      name: props.name || 'RN + TS + RNN2',
-    };
+    this.state = {};
   }
 
   componentDidMount() {}
 
   render() {
-    const { name } = this.state;
-
     return (
       <View style={styles.container}>
-        <CText>Home</CText>
-        <CText>{name}</CText>
+        <CText>Settings</CText>
       </View>
     );
   }
 }
 
-export default Home;
+export default Settings;

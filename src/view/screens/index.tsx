@@ -1,16 +1,25 @@
 import { Navigation } from 'react-native-navigation';
 
-import Screens from '../../constants/screen';
+import { SCREENS } from '../../constants/screen';
 
-import Splash from './splash';
-import Home from './home';
+import * as Splash from './splash';
+import * as Home from './home';
+import * as Settings from './settings';
 
-const registerComponentWithRedux = redux => (name, component) => {
-  Navigation.registerComponentWithRedux(name, () => component, redux.Provider, redux.store);
+const registerComponentWithRedux = (redux: any) => (
+  name: string,
+  component: any,
+) => {
+  Navigation.registerComponentWithRedux(
+    name,
+    () => component,
+    redux.Provider,
+    redux.store,
+  );
 };
 
-export default function registerScreens(redux) {
-  registerComponentWithRedux(redux)(Screens.Home, Home);
-  registerComponentWithRedux(redux)(Screens.Splash, Splash);
-  // registerComponent(redux)(Screens.Splash, Splash);
+export function registerScreens(redux: any) {
+  registerComponentWithRedux(redux)(SCREENS.Splash, Splash.default);
+  registerComponentWithRedux(redux)(SCREENS.Home, Home.default);
+  registerComponentWithRedux(redux)(SCREENS.Settings, Settings.default);
 }

@@ -1,8 +1,9 @@
 // Screen ids constants
 
-const Screens = {
+const SCREENS = {
   Splash: 'Splash',
-  Home: 'Home'
+  Home: 'Home',
+  Settings: 'Settings',
 };
 
-export default Screens;
+export { SCREENS };

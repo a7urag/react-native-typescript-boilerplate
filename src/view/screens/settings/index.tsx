@@ -6,9 +6,9 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = () => ({});
 
-const splashContainer = connect(
+const settingsContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(Component);
 
-export default splashContainer;
+export default settingsContainer;
